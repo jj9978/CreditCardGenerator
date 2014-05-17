@@ -32,7 +32,7 @@ public class Runner {
             ccn[j]+=j;
         System.out.println("This is the hash value: " );
         System.out.println("Transforming your number into a credit card number...");
-}
+    }
     //CVV generator.
     void cvv(){
         System.out.println("cvv");
