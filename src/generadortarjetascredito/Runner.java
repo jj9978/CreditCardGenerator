@@ -53,15 +53,16 @@ public class Runner {
             System.out.println("Iteration: "+cont);
             System.out.println(">>"+Arrays.toString(ccnarray));
         }
+        System.out.println("Preparing verification...");
         for(int j=0;j<ccnarray.length;j++){
-            a = ccnarray[j] = 1;
-            b = ccnarray[j] = 3;
-            c = ccnarray[j] = 5;
-            d = ccnarray[j] = 7;
-            e = ccnarray[j] = 9;
-            f = ccnarray[j] = 11;
-            g = ccnarray[j] = 13;
-            h = ccnarray[j] = 15;
+            a = ccnarray[j=1];
+            b = ccnarray[j=3];
+            c = ccnarray[j=5];
+            d = ccnarray[j=7];
+            e = ccnarray[j=9];
+            f = ccnarray[j=11];
+            g = ccnarray[j=13];
+            h = ccnarray[j=15];
             a2 = a * 2;
             if (a2>10){
                a2=ccnarray[1];
@@ -94,16 +95,17 @@ public class Runner {
             if (h2>10){
                h2=ccnarray[15];
             } 
-        }
         for(int k = 0;k<ccnarray.length;k++){
             val+=ccnarray[k];
+            module = val%10;
         }
-        System.out.println("This is the hash value: " + val);
-        module = val%10;
-        if(module==0)
+        if(module==0){
             System.out.println("This is your credit card number: "+ Arrays.toString(ccnarray));
-        else
+        }
+        else{
             System.out.println("Input another number, cause it is not a valid one.");
+        }
+    }
     }
     //CreditCardNumber(CCN) generator.
     void verify()throws IOException, InputMismatchException{
@@ -113,7 +115,7 @@ public class Runner {
             System.out.print("Number" + cont + ">>");
             ccn[f] =in.nextInt();
         }
-        System.out.println("This is the number you entered: "+ Arrays.toString(ccn));
+        System.out.println("Credit card to iterate: "+ Arrays.toString(ccn));
         for(int j=0;j<ccn.length;j++){
             a = ccn[j] = 1;
             b = ccn[j] = 3;
@@ -156,14 +158,19 @@ public class Runner {
                h2=ccn[j]=15;
             } 
         }
+        System.out.println("Last iteration: "+ Arrays.toString(ccnarray));
         for(int k = 0;k<ccn.length;k++)
             System.out.println("This is the hash value: " + (val+=ccn[k]));
         module = val%10;
-        if(module==0)
+        if(module==0){
             System.out.println("This is your credit card number: "+ Arrays.toString(ccn));
+            Runner United = new Runner();
+            United.cvv();
+            System.out.println("Done...");
+        }
         else
             System.out.println("Input another number, cause it is not a valid one.");
-    }
+}
     //CVV generator.
     void cvv(){
         System.out.println("cvv");
