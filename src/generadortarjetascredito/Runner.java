@@ -11,30 +11,32 @@ import java.util.Scanner;
  * @throws java.util.InputMismatchException
  */
 public class Runner {
-    //CreditCardNumber(CCN)
-    static void ccn()throws IOException, InputMismatchException{
-        Scanner in = new Scanner(System.in);
-        int [] ccn = new int[10];
-        int [] n = new int[10];
-        System.out.println("Escribe 10 números entre 0 y 9.");
+    public Scanner in = new Scanner(System.in);
+    public int [] ccn = new int[10];
+    public int [] cvvarray = new int[3];
+    public int cont = 0;
+    //Credit card verification.
+    void verify(){
+        
+    }
+    //CreditCardNumber(CCN) generator.
+    void ccn()throws IOException, InputMismatchException{
+        System.out.println("Writte ten random numbers from 0 to 9.");
         for(int f=0;f<ccn.length;f++){
-            System.out.print(">>");
+            cont++;
+            System.out.print("Number" + cont + ">>");
             ccn[f] =in.nextInt();
         }
-        for(int i=0;i<n.length;i++)
-            if(i%2!=0)
-               n[i]+=n[i] = i*2;
-            else{
-               n[i] = i;
-            System.out.println(n[i]);
-            }
-        System.out.println("Este es el "+ Arrays.toString(n));
+        System.out.println("This is the number you entered: "+ Arrays.toString(ccn));
+        for(int j=0;j<ccn.length;j++)
+            ccn[j]+=j;
+        System.out.println("This is the hash value: " );
+        System.out.println("Transforming your number into a credit card number...");
 }
-    //Generamos el valor del CVV.
-    static void cvv(){
+    //CVV generator.
+    void cvv(){
         System.out.println("cvv");
         System.out.print(">>");
-        int [] cvvarray = new int[3];
         Random randomcvv = new Random();
         for(int j=0;j<cvvarray.length;j++){
             int randomInt = randomcvv.nextInt(10);
