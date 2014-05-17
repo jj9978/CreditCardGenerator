@@ -27,12 +27,11 @@ public class GeneradorTarjetasCredito {
                     switch(option){
                         case 1:
                             Road.ccn();
-                            Road.cvv();
-                            System.out.println("Done...");
                         break;
                         case 2:
                             System.out.println("Welcome, in this section you can verify a creditcard number.");
                             Road.verify();
+                            System.out.println("Done...");
                         break;
                         case 3:
                             System.exit(0);
