@@ -38,7 +38,7 @@ public class GeneradorTarjetasCredito {
                             System.exit(0);
                             break;
                         default:
-                            System.out.println("Just accept numbers (1 and 2).");
+                            System.out.println("Just accept numbers from one to three.");
                         break;
                     }
         }while(option!=2);
